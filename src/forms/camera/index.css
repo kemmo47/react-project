@@ -1,0 +1,40 @@
+.embla {
+  margin: auto;
+  overflow: hidden;
+}
+
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  min-width: 0;
+  flex: 0 0 calc(100% / 7);
+  border-left: 1px solid #d0d5dc;
+  border-top: 1px solid #d0d5dc;
+  border-bottom: 1px solid #d0d5dc;
+  user-select: none;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.embla__slide:last-child {
+  border-right: 1px solid #d0d5dc;
+}
+
+/* 640px */
+@media (min-width: 40rem) {
+  .embla__slide {
+    flex: 0 0 calc(100% / 9);
+  }
+}
+
+@layer base {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
